@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1069812624728",
+    "project_id": "onshop-72c11",
+    "storage_bucket": "onshop-72c11.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1069812624728:android:4c73076cce63a30afb892d",
+        "android_client_info": {
+          "package_name": "com.radzhabov.onlineshop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1069812624728-ro00182anp5tt7brgh3efs9bqo1aln5a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxhcOBs-GC5yC1nWGRNvNk3R4L1Mu6-w4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1069812624728-ro00182anp5tt7brgh3efs9bqo1aln5a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
