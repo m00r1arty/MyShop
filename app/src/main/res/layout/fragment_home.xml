@@ -3,20 +3,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.home.HomeFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:weightSum="5"
         android:orientation="vertical"
         android:background="@color/colorWhite">
 
         <!-- Trade by bata -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1.3"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <LinearLayout
@@ -278,11 +277,12 @@
                         android:background="@drawable/icon_background"
                         android:layout_gravity="center"
                         android:orientation="vertical">
+
                         <ImageView
                             android:layout_width="20dp"
                             android:layout_height="30dp"
                             android:layout_centerInParent="true"
-                            android:src="@drawable/kids_icon"/>
+                            android:src="@drawable/kids_icon" />
                     </RelativeLayout>
                     <TextView
                         android:layout_width="wrap_content"
@@ -302,22 +302,55 @@
         </LinearLayout>
 
         <!-- Latest -->
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1.5"
-            android:elevation="36dp">
-
-        </RelativeLayout>
-
         <!-- Flash Sale -->
-        <RelativeLayout
+        <!-- Brands -->
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="2.2"
-            android:elevation="36dp">
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:elevation="36dp">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/latest_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_marginStart="11dp"
+                    android:layout_height="150dp"
+                    tools:listitem="@layout/latest_item_layout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/latest_part_home"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:orientation="horizontal"/>
 
-        </RelativeLayout>
+                <TextView
+                    android:id="@+id/latest_part_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="15sp"
+                    android:layout_marginStart="11dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/latest_recycler"
+                    android:text="Latest"/>
+
+                <TextView
+                    android:id="@+id/view_latest_part_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat"
+                    android:textColor="@color/colorGrayHome"
+                    android:textSize="9sp"
+                    android:layout_marginStart="11dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/latest_recycler"
+                    android:text="View all"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
 
     </LinearLayout>
 
