@@ -1,22 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:height="100dp"
-        android:width="100dp">
-        <shape android:shape="oval">
-            <solid android:color="@color/colorIconImage"/>
-            <corners android:radius="14dp"/>
-        </shape>
-    </item>
-
-    <item
         android:gravity="fill"
         android:bottom="20dp"
         android:left="20dp"
         android:right="20dp"
         android:top="20dp"
-        android:height="50dp"
-        android:width="50dp"
+        android:height="60dp"
+        android:width="60dp"
         android:drawable="@drawable/home"/>
-
 </layer-list>

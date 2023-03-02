@@ -5,17 +5,321 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:weightSum="5"
+        android:orientation="vertical"
+        android:background="@color/colorWhite">
 
-        <TextView
-            android:id="@+id/textHome"
+        <!-- Trade by bata -->
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment" />
+            android:layout_height="0dp"
+            android:layout_weight="1.3"
+            android:orientation="vertical">
 
-    </RelativeLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="21dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/nav_menu_icon"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="100dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:textColor="@color/colorBlack"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:text="Trade by"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+
+                        android:layout_gravity="center"
+                        android:textSize="20sp"
+                        android:layout_marginLeft="3dp"
+                        android:textColor="@color/colorPrimary"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:text="bata"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="46dp"
+                    android:layout_height="43dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="44dp"
+                    android:layout_marginRight="37dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="21dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/satria"/>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textAlignment="center"
+                            android:layout_marginRight="1dp"
+                            android:textSize="6sp"
+                            android:textColor="@color/colorBlack"
+                            android:fontFamily="@font/montserrat"
+                            android:text="Location"/>
+                        <ImageView
+                            android:layout_width="8dp"
+                            android:layout_height="8dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/location_icon"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:textAlignment="center"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="57dp"
+                android:layout_marginRight="56dp"
+                android:background="@drawable/edit_text_background"
+                android:hint="What are you looking for?"
+                android:textColor="@color/colorBlack"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="17dp"
+                android:orientation="horizontal">
+
+                <!-- Phones -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:layout_width="40dp"
+                        android:layout_height="38dp"
+                        android:background="@drawable/icon_background"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="30dp"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/phones_icon" />
+                    </RelativeLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textAlignment="center"
+                        android:textSize="8sp"
+                        android:textColor="@color/colorBlack"
+                        android:fontFamily="@font/montserrat"
+                        android:text="Phones"/>
+                </LinearLayout>
+                <!-- Headphones -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:layout_width="40dp"
+                        android:layout_height="38dp"
+                        android:background="@drawable/icon_background"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="30dp"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/headphones_icon" />
+                    </RelativeLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textAlignment="center"
+                        android:textSize="8sp"
+                        android:textColor="@color/colorBlack"
+                        android:fontFamily="@font/montserrat"
+                        android:text="Headphones"/>
+                </LinearLayout>
+                <!-- Games -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:layout_width="40dp"
+                        android:layout_height="38dp"
+                        android:background="@drawable/icon_background"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="30dp"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/games_icon"/>
+                    </RelativeLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textAlignment="center"
+                        android:textSize="8sp"
+                        android:textColor="@color/colorBlack"
+                        android:fontFamily="@font/montserrat"
+                        android:text="Games"/>
+                </LinearLayout>
+                <!-- Cars -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:layout_width="40dp"
+                        android:layout_height="38dp"
+                        android:background="@drawable/icon_background"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="30dp"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/cars_icon" />
+                    </RelativeLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textAlignment="center"
+                        android:textSize="8sp"
+                        android:textColor="@color/colorBlack"
+                        android:fontFamily="@font/montserrat"
+                        android:text="Cars"/>
+                </LinearLayout>
+                <!-- Furniture -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:layout_width="40dp"
+                        android:layout_height="38dp"
+                        android:background="@drawable/icon_background"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="30dp"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/furniture_icon" />
+                    </RelativeLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textAlignment="center"
+                        android:textSize="8sp"
+                        android:textColor="@color/colorBlack"
+                        android:fontFamily="@font/montserrat"
+                        android:text="Furniture"/>
+                </LinearLayout>
+                <!-- kids -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:layout_width="40dp"
+                        android:layout_height="38dp"
+                        android:background="@drawable/icon_background"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="30dp"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/kids_icon"/>
+                    </RelativeLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textAlignment="center"
+                        android:textSize="8sp"
+                        android:textColor="@color/colorBlack"
+                        android:fontFamily="@font/montserrat"
+                        android:text="kids"/>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <!-- Latest -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.5"
+            android:elevation="36dp">
+
+        </RelativeLayout>
+
+        <!-- Flash Sale -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2.2"
+            android:elevation="36dp">
+
+        </RelativeLayout>
+
+    </LinearLayout>
 
 
 </FrameLayout>

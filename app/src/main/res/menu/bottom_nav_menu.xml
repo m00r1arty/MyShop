@@ -7,22 +7,22 @@
 
     <item
         android:id="@+id/navigation_favorite"
-        android:icon="@drawable/favorite"
+        android:icon="@drawable/favorite_selector"
         android:title="favorites"/>
 
     <item
         android:id="@+id/navigation_basket"
-        android:icon="@drawable/basket"
+        android:icon="@drawable/basket_selector"
         android:title="basket"/>
 
     <item
         android:id="@+id/navigation_comments"
-        android:icon="@drawable/comments"
+        android:icon="@drawable/comments_selector"
         android:title="comments"/>
 
     <item
         android:id="@+id/navigation_profile"
-        android:icon="@drawable/profile"
+        android:icon="@drawable/profile_selector"
         android:title="profile"/>
 
 </menu>

@@ -4,11 +4,12 @@
     <color name="colorPrimaryDark">#0E68FF</color>
     <color name="colorTextWhite">#ffffff</color>
     <color name="colorWhite">#ffffff</color>
-    <color name="colorGray">#DEDADA</color>
+    <color name="colorGray">#C4C0C0</color>
     <color name="colorTextBlack">#000000</color>
     <color name="colorBlack">#000000</color>
     <color name="colorEditText">#14000000</color>
     <color name="colorIconImage">#14000000</color>
+    <color name="colorBottomBackground">#26000000</color>
     <color name="colorButton">#FF3700B3</color>
     <color name="colorAccent">#FF3700B3</color>
 
