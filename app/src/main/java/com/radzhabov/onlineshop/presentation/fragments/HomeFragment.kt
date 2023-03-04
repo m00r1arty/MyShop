@@ -8,16 +8,16 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.radzhabov.onlineshop.data.model.FlashSale
 import com.radzhabov.onlineshop.data.network.NetworkService
+import com.radzhabov.onlineshop.data.repositories.FlashSaleRepository
 import com.radzhabov.onlineshop.databinding.FragmentHomeBinding
 import com.radzhabov.onlineshop.presentation.adapter.FlashSaleAdapter
 import com.radzhabov.onlineshop.presentation.viewmodels.HomeViewModel
 
 class HomeFragment : Fragment() {
-
     private lateinit var _binding: FragmentHomeBinding
     private val adapter = FlashSaleAdapter(emptyList())
     private val viewModel: HomeViewModel by viewModels {
-        HomeViewModel.Factory(NetworkService.getInstance().flashSaleApi)
+        HomeViewModel.Factory(FlashSaleRepository(NetworkService.getInstance().flashSaleApi))
     }
 
     override fun onCreateView(
