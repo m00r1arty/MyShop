@@ -1,4 +1,4 @@
-package com.radzhabov.onlineshop.ui.basket
+package com.radzhabov.onlineshop.presentation.viewmodels
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

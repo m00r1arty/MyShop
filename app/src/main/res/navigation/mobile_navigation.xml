@@ -7,31 +7,31 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.radzhabov.onlineshop.ui.home.HomeFragment"
+        android:name="com.radzhabov.onlineshop.presentation.fragments.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_favorite"
-        android:name="com.radzhabov.onlineshop.ui.favorites.FavoritesFragment"
+        android:name="com.radzhabov.onlineshop.presentation.fragments.FavoritesFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_favorite" />
 
     <fragment
         android:id="@+id/navigation_basket"
-        android:name="com.radzhabov.onlineshop.ui.basket.BasketFragment"
+        android:name="com.radzhabov.onlineshop.presentation.fragments.BasketFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_basket" />
 
     <fragment
         android:id="@+id/navigation_comments"
-        android:name="com.radzhabov.onlineshop.ui.comments.CommentsFragment"
+        android:name="com.radzhabov.onlineshop.presentation.fragments.CommentsFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_comments" />
 
     <fragment
         android:id="@+id/navigation_profile"
-        android:name="com.radzhabov.onlineshop.ui.profile.ProfileFragment"
+        android:name="com.radzhabov.onlineshop.presentation.fragments.ProfileFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_profile" />
 </navigation>

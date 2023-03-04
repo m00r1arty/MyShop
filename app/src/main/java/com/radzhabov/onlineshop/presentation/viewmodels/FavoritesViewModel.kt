@@ -1,4 +1,4 @@
-package com.radzhabov.onlineshop.ui.favorites
+package com.radzhabov.onlineshop.presentation.viewmodels
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

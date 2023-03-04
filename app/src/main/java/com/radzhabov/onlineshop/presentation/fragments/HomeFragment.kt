@@ -1,17 +1,24 @@
-package com.radzhabov.onlineshop.ui.home
+package com.radzhabov.onlineshop.presentation.fragments
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.radzhabov.onlineshop.data.repositories.FlashSaleServices
 import com.radzhabov.onlineshop.databinding.FragmentHomeBinding
+import com.radzhabov.onlineshop.presentation.adapter.FlashSaleAdapter
+import com.radzhabov.onlineshop.presentation.viewmodels.HomeViewModel
 
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
+    lateinit var mService: FlashSaleServices
+    lateinit var adapter: FlashSaleAdapter
+    lateinit var dialog: AlertDialog
+    private lateinit var viewModel: HomeViewModel
 
     // This property is only valid between onCreateView and
     // onDestroyView.

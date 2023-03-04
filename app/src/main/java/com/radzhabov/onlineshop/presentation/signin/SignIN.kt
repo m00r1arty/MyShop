@@ -1,4 +1,4 @@
-package com.radzhabov.onlineshop.ui.signin
+package com.radzhabov.onlineshop.presentation.signin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

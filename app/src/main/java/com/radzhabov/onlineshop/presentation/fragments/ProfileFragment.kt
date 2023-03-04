@@ -1,17 +1,17 @@
-package com.radzhabov.onlineshop.ui.favorites
+package com.radzhabov.onlineshop.presentation.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.radzhabov.onlineshop.databinding.FragmentFavoriteBinding
+import com.radzhabov.onlineshop.databinding.FragmentProfileBinding
+import com.radzhabov.onlineshop.presentation.viewmodels.ProfileViewModel
 
-class FavoritesFragment : Fragment() {
+class ProfileFragment : Fragment() {
 
-    private var _binding: FragmentFavoriteBinding? = null
+    private var _binding: FragmentProfileBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -22,16 +22,16 @@ class FavoritesFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val favoritesViewModel =
-            ViewModelProvider(this).get(FavoritesViewModel::class.java)
+        val profileViewModel =
+            ViewModelProvider(this).get(ProfileViewModel::class.java)
 
-        _binding = FragmentFavoriteBinding.inflate(inflater, container, false)
+        _binding = FragmentProfileBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textFavorites
-        favoritesViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
+//        val textView: TextView = binding.textProfile
+//        profileViewModel.text.observe(viewLifecycleOwner) {
+//            textView.text = it
+//        }
         return root
     }
 

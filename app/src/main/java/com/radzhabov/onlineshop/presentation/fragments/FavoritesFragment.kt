@@ -1,4 +1,4 @@
-package com.radzhabov.onlineshop.ui.basket
+package com.radzhabov.onlineshop.presentation.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,11 +7,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.radzhabov.onlineshop.databinding.FragmentBasketBinding
+import com.radzhabov.onlineshop.databinding.FragmentFavoriteBinding
+import com.radzhabov.onlineshop.presentation.viewmodels.FavoritesViewModel
 
-class BasketFragment : Fragment() {
+class FavoritesFragment : Fragment() {
 
-    private var _binding: FragmentBasketBinding? = null
+    private var _binding: FragmentFavoriteBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -22,14 +23,14 @@ class BasketFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val basketViewModel =
-            ViewModelProvider(this).get(BasketViewModel::class.java)
+        val favoritesViewModel =
+            ViewModelProvider(this).get(FavoritesViewModel::class.java)
 
-        _binding = FragmentBasketBinding.inflate(inflater, container, false)
+        _binding = FragmentFavoriteBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textBasked
-        basketViewModel.text.observe(viewLifecycleOwner) {
+        val textView: TextView = binding.textFavorites
+        favoritesViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root

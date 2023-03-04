@@ -1,4 +1,4 @@
-package com.radzhabov.onlineshop.ui.comments
+package com.radzhabov.onlineshop.presentation.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.radzhabov.onlineshop.databinding.FragmentCommentsBinding
+import com.radzhabov.onlineshop.presentation.viewmodels.CommentsViewModel
 
 class CommentsFragment : Fragment() {
     private var _binding: FragmentCommentsBinding? = null
