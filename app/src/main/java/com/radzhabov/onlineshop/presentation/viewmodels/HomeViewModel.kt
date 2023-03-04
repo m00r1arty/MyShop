@@ -1,26 +1,32 @@
 package com.radzhabov.onlineshop.presentation.viewmodels
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.*
+import com.radzhabov.onlineshop.data.mappers.mapFlashSale
 import com.radzhabov.onlineshop.data.model.FlashSale
-import com.radzhabov.onlineshop.data.repositories.FlashSaleServices
+import com.radzhabov.onlineshop.data.network.FlashSaleApi
+import com.radzhabov.onlineshop.data.network.NetworkService
+import kotlinx.coroutines.launch
 
 class HomeViewModel(
-    private val repository: FlashSaleServices
+    private val flashSaleApi: FlashSaleApi
 ) : ViewModel() {
 
-//    private val _text = MutableLiveData<String>().apply {
-//        value = "This is home Fragment"
-//    }
-//    val text: LiveData<String> = _text
-
-    private val _flashSale = MutableLiveData<FlashSale>()
+    private val _flashSale = MutableLiveData<List<FlashSale>>()
     val flashSale: LiveData<List<FlashSale>>
         get() = _flashSale
 
-    suspend fun getFlashSale() {
-        val flashSale = repository.getFlashSaleList()
-        _flashSale.value = flashSale
+    fun updateFlashSale() {
+        viewModelScope.launch {
+            val result = NetworkService.handleCall(flashSaleApi.getFlashSaleList())
+            result?.let { flashSaleList ->
+                _flashSale.value = flashSaleList .flash_sale.map { it.mapFlashSale() }
+            }
+        }
+    }
+
+    class Factory(private val flashSaleApi: FlashSaleApi) : ViewModelProvider.NewInstanceFactory() {
+        @Suppress("UNCHECKED_CAST")
+        override fun <T : ViewModel> create(modelClass: Class<T>): T =
+            HomeViewModel(flashSaleApi) as T
     }
 }

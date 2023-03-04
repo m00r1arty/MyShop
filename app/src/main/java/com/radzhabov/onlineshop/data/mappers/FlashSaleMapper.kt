@@ -1,7 +1,7 @@
 package com.radzhabov.onlineshop.data.mappers
 
 import com.radzhabov.onlineshop.data.model.FlashSale
-import com.radzhabov.onlineshop.data.model.FlashSaleX
+import com.radzhabov.onlineshop.data.network.dtos.FlashSaleX
 
 fun FlashSaleX.mapFlashSale() = FlashSale(
     category = this.category,

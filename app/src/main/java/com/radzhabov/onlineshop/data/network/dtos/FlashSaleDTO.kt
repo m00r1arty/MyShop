@@ -1,4 +1,4 @@
-package com.radzhabov.onlineshop.data.model
+package com.radzhabov.onlineshop.data.network.dtos
 
 data class FlashSaleDTO(
     val flash_sale: List<FlashSaleX>
