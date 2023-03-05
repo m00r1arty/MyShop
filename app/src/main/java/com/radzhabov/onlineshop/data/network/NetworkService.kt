@@ -8,7 +8,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.lang.Exception
 
 class NetworkService private constructor() {
-
     private val retrofit: Retrofit = Retrofit.Builder()
         .baseUrl(BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
@@ -16,6 +15,9 @@ class NetworkService private constructor() {
 
     val flashSaleApi: FlashSaleApi
         get() = retrofit.create(FlashSaleApi::class.java)
+
+    val latestApi: LatestApi
+        get() = retrofit.create(LatestApi::class.java)
 
     companion object {
 
@@ -29,7 +31,7 @@ class NetworkService private constructor() {
 
         private const val BASE_URL = "https://run.mocky.io/v3/"
 
-        suspend fun <T> handleCall(call: Call<T>): T? = withContext(Dispatchers.IO) {
+        suspend fun <T> handleCall(call: Call<T>): T? = withContext(Dispatchers.Default) {
             return@withContext try {
                 val response = call.execute()
                 if (response.isSuccessful) {

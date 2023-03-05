@@ -29,7 +29,7 @@ class FlashSaleAdapter(
     override fun getItemCount() = flashSaleList.size
 
     @SuppressLint("NotifyDataSetChanged")
-    fun updateList(flashSaleList: List<FlashSale>) {
+    fun updateFlashSaleList(flashSaleList: List<FlashSale>) {
         this.flashSaleList = flashSaleList
         this.notifyDataSetChanged()
     }
@@ -54,9 +54,9 @@ class FlashSaleAdapter(
             }
             Picasso.get().load(flashSale.image_url).into(backgroundImage)
             category.text = flashSale.category
-            discount.text = flashSale.discount.toString()
+            discount.text = flashSale.discount.toString() + "% off"
             name.text = flashSale.name
-            price.text = flashSale.price.toString()
+            price.text =  "$ " + flashSale.price.toString()
         }
 
     }

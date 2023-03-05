@@ -6,18 +6,23 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import com.radzhabov.onlineshop.data.model.FlashSale
 import com.radzhabov.onlineshop.data.network.NetworkService
 import com.radzhabov.onlineshop.data.repositories.FlashSaleRepository
+import com.radzhabov.onlineshop.data.repositories.LatestRepository
 import com.radzhabov.onlineshop.databinding.FragmentHomeBinding
 import com.radzhabov.onlineshop.presentation.adapter.FlashSaleAdapter
+import com.radzhabov.onlineshop.presentation.adapter.LatestAdapter
 import com.radzhabov.onlineshop.presentation.viewmodels.HomeViewModel
 
 class HomeFragment : Fragment() {
     private lateinit var _binding: FragmentHomeBinding
-    private val adapter = FlashSaleAdapter(emptyList())
+    private val flashSaleAdapter = FlashSaleAdapter(emptyList())
+    private val latestAdapter = LatestAdapter(emptyList())
     private val viewModel: HomeViewModel by viewModels {
-        HomeViewModel.Factory(FlashSaleRepository(NetworkService.getInstance().flashSaleApi))
+        HomeViewModel.Factory(FlashSaleRepository(
+                NetworkService.getInstance().flashSaleApi),
+                LatestRepository(NetworkService.getInstance().latestApi)
+        )
     }
 
     override fun onCreateView(
@@ -27,14 +32,22 @@ class HomeFragment : Fragment() {
     ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false).apply {
             lifecycleOwner = viewLifecycleOwner
-            flashSaleRecycler.adapter = adapter
+            flashSaleRecycler.adapter = flashSaleAdapter
+            latestRecycler.adapter = latestAdapter
         }
 
         viewModel.flashSale.observe(viewLifecycleOwner) {
             if (it.isNotEmpty()) {
-                adapter.updateList(it)
+                flashSaleAdapter.updateFlashSaleList(it)
             }
         }
+
+        viewModel.latest.observe(viewLifecycleOwner) {
+            if (it.isNotEmpty()) {
+                latestAdapter.updateLatestList(it)
+            }
+        }
+
         return _binding.root
     }
 
