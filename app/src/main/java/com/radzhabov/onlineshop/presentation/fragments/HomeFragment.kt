@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.radzhabov.onlineshop.MainActivity
 import com.radzhabov.onlineshop.data.network.NetworkService
 import com.radzhabov.onlineshop.data.repositories.FlashSaleRepository
 import com.radzhabov.onlineshop.data.repositories.LatestRepository
@@ -15,6 +16,7 @@ import com.radzhabov.onlineshop.presentation.adapter.LatestAdapter
 import com.radzhabov.onlineshop.presentation.viewmodels.HomeViewModel
 
 class HomeFragment : Fragment() {
+
     private lateinit var _binding: FragmentHomeBinding
     private val flashSaleAdapter = FlashSaleAdapter(emptyList())
     private val latestAdapter = LatestAdapter(emptyList())
@@ -30,7 +32,7 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
+        (activity as MainActivity).navView.visibility = View.VISIBLE
         _binding = FragmentHomeBinding.inflate(inflater, container, false).apply {
             lifecycleOwner = viewLifecycleOwner
             flashSaleRecycler.adapter = flashSaleAdapter
