@@ -17,6 +17,7 @@
     <color name="colorBottomBackground">#26000000</color>
     <color name="colorButton">#FF3700B3</color>
     <color name="colorAccent">#FF3700B3</color>
+    <color name="colorETAuth">#7B7B7B</color>
 
 
     <color name="bottom_nav_background">#FEDBD0</color>

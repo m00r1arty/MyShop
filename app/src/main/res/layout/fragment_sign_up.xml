@@ -45,7 +45,7 @@
                 android:paddingLeft="12dp"
                 android:paddingRight="12dp"
                 android:textAlignment="center"
-                android:textColor="@color/colorTextBlack"
+                android:textColor="@color/colorETAuth"
                 android:textSize="15sp" />
             <EditText
                 android:id="@+id/etLastName"
@@ -60,7 +60,7 @@
                 android:paddingLeft="12dp"
                 android:paddingRight="12dp"
                 android:textAlignment="center"
-                android:textColor="@color/colorTextBlack"
+                android:textColor="@color/colorETAuth"
                 android:textSize="15sp" />
             <EditText
                 android:id="@+id/etEmail"
@@ -76,7 +76,7 @@
                 android:paddingLeft="12dp"
                 android:paddingRight="12dp"
                 android:textAlignment="center"
-                android:textColor="@color/colorTextBlack"
+                android:textColor="@color/colorETAuth"
                 android:textSize="15sp" />
 
             <Button
