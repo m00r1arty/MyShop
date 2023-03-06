@@ -54,9 +54,9 @@ class FlashSaleAdapter(
             }
             Picasso.get().load(flashSale.image_url).into(backgroundImage)
             category.text = flashSale.category
-            discount.text = flashSale.discount.toString() + "% off"
+            discount.text = "${flashSale.discount}% off"
             name.text = flashSale.name
-            price.text =  "$ " + flashSale.price.toString()
+            price.text = "$ ${flashSale.price}"
         }
 
     }

@@ -19,8 +19,8 @@ class HomeFragment : Fragment() {
     private val flashSaleAdapter = FlashSaleAdapter(emptyList())
     private val latestAdapter = LatestAdapter(emptyList())
     private val viewModel: HomeViewModel by viewModels {
-        HomeViewModel.Factory(FlashSaleRepository(
-                NetworkService.getInstance().flashSaleApi),
+        HomeViewModel.Factory(
+            FlashSaleRepository(NetworkService.getInstance().flashSaleApi),
                 LatestRepository(NetworkService.getInstance().latestApi)
         )
     }
@@ -30,6 +30,7 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
         _binding = FragmentHomeBinding.inflate(inflater, container, false).apply {
             lifecycleOwner = viewLifecycleOwner
             flashSaleRecycler.adapter = flashSaleAdapter

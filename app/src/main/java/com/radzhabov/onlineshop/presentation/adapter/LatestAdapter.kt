@@ -49,8 +49,7 @@ class LatestAdapter(
             Picasso.get().load(latest.image_url).into(backgroundImage)
             category.text = latest.category
             name.text = latest.name
-            price.text = "$ " + latest.price.toString()
+            price.text = "$ ${latest.price}"
         }
-
     }
 }

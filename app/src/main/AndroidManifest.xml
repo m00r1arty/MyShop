@@ -20,22 +20,8 @@
             android:label="@string/title_activity_bottom">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".presentation.signup.SignUP"
-            android:theme="@style/OnlineShop">
-
-        </activity>
-
-
-        <activity
-            android:name=".presentation.signin.SignIN"
-            android:theme="@style/OnlineShop"
-            android:windowSoftInputMode="adjustResize">
-
         </activity>
 
         <meta-data

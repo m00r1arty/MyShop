@@ -107,6 +107,7 @@
                 android:layout_marginRight="56dp"
                 android:background="@drawable/edit_text_background"
                 android:hint="What are you looking for?"
+                android:textColorHint="@color/colorHomeETText"
                 android:textColor="@color/colorBlack"/>
 
             <LinearLayout
