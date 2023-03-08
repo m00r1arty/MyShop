@@ -14,7 +14,7 @@
         android:theme="@style/Theme.OnlineShop"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".presentation.main.MainActivity"
             android:exported="true"
             android:label="@string/title_activity_bottom">
             <intent-filter>

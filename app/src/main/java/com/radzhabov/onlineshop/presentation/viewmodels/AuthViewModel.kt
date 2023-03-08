@@ -4,8 +4,11 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.radzhabov.onlineshop.data.db.UserDao
 import com.radzhabov.onlineshop.data.entities.User
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class AuthViewModel(
+@HiltViewModel
+class AuthViewModel @Inject constructor(
     private val userDao: UserDao
     ) : ViewModel() {
 
@@ -18,11 +21,4 @@ class AuthViewModel(
         userDao.register(User(firstname = firstName, lastname = lastName, email = email))
     }
 
-    class Factory(
-        private val userDao: UserDao
-    ) : ViewModelProvider.NewInstanceFactory() {
-        @Suppress("UNCHECKED_CAST")
-        override fun <T : ViewModel> create(modelClass: Class<T>): T =
-            AuthViewModel(userDao) as T
-    }
 }

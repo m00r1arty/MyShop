@@ -7,25 +7,22 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import com.radzhabov.onlineshop.MainActivity
+import com.radzhabov.onlineshop.presentation.main.MainActivity
 import com.radzhabov.onlineshop.R
-import com.radzhabov.onlineshop.data.db.AppDatabase
 import com.radzhabov.onlineshop.databinding.FragmentSignInBinding
 import com.radzhabov.onlineshop.presentation.viewmodels.AuthViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
+@AndroidEntryPoint
 class SignInFragment : Fragment() {
 
     private lateinit var binding: FragmentSignInBinding
     private val navController by lazy { findNavController() }
-    private val viewModel: AuthViewModel by viewModels {
-        AuthViewModel.Factory(AppDatabase.getInstance(requireContext()).userDao())
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,6 +30,7 @@ class SignInFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
+        val viewModel: AuthViewModel by viewModels ()
         binding = FragmentSignInBinding.inflate(inflater, container, false)
         (activity as MainActivity).navView.visibility = View.GONE
 

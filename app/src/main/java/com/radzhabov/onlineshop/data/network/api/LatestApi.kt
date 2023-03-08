@@ -1,4 +1,4 @@
-package com.radzhabov.onlineshop.data.network
+package com.radzhabov.onlineshop.data.network.api
 
 import com.radzhabov.onlineshop.data.network.dtos.FlashSaleDTO
 import com.radzhabov.onlineshop.data.network.dtos.LatestDTO

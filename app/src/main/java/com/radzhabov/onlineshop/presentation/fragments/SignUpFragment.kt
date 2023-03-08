@@ -5,20 +5,20 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import com.radzhabov.onlineshop.MainActivity
+import com.radzhabov.onlineshop.presentation.main.MainActivity
 import com.radzhabov.onlineshop.R
-import com.radzhabov.onlineshop.data.db.AppDatabase
 import com.radzhabov.onlineshop.databinding.FragmentSignUpBinding
 import com.radzhabov.onlineshop.presentation.viewmodels.AuthViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
+@AndroidEntryPoint
 class SignUpFragment : Fragment() {
-    private lateinit var viewModel: AuthViewModel
     private lateinit var binding: FragmentSignUpBinding
     private val navController by lazy { findNavController() }
 
@@ -28,9 +28,8 @@ class SignUpFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        val authViewModelFactory = AuthViewModel.Factory(AppDatabase.getInstance(requireContext()).userDao())
+        val viewModel: AuthViewModel by viewModels ()
         binding = FragmentSignUpBinding.inflate(inflater, container, false)
-        viewModel = ViewModelProvider(this, authViewModelFactory)[AuthViewModel::class.java]
         (activity as MainActivity).navView.visibility = View.GONE
 
         binding.btnRegister.setOnClickListener {

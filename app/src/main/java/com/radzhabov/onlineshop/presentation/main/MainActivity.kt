@@ -1,15 +1,13 @@
-package com.radzhabov.onlineshop
+package com.radzhabov.onlineshop.presentation.main
 
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.radzhabov.onlineshop.R
 import com.radzhabov.onlineshop.databinding.ActivityMainBinding
-import com.radzhabov.onlineshop.domain.common.MAIN
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding

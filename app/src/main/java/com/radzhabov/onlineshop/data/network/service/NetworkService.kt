@@ -1,5 +1,7 @@
-package com.radzhabov.onlineshop.data.network
+package com.radzhabov.onlineshop.data.network.service
 
+import com.radzhabov.onlineshop.data.network.api.FlashSaleApi
+import com.radzhabov.onlineshop.data.network.api.LatestApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.Call

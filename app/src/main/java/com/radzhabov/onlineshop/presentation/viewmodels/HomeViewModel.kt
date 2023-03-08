@@ -20,7 +20,7 @@ class HomeViewModel(
     val latest: LiveData<List<Latest>>
         get() = _latest
 
-    fun updateFlashSale() {
+    fun updateRepository() {
         viewModelScope.launch {
             val flashSaleList = flashSaleRepository.getFlashSaleList()
             _flashSale.value = flashSaleList

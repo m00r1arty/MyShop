@@ -6,10 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import com.radzhabov.onlineshop.MainActivity
-import com.radzhabov.onlineshop.data.network.NetworkService
+import com.radzhabov.onlineshop.data.network.service.NetworkService
 import com.radzhabov.onlineshop.data.repositories.FlashSaleRepository
 import com.radzhabov.onlineshop.data.repositories.LatestRepository
+import com.radzhabov.onlineshop.presentation.main.MainActivity
 import com.radzhabov.onlineshop.databinding.FragmentHomeBinding
 import com.radzhabov.onlineshop.presentation.adapter.FlashSaleAdapter
 import com.radzhabov.onlineshop.presentation.adapter.LatestAdapter
@@ -20,10 +20,10 @@ class HomeFragment : Fragment() {
     private lateinit var _binding: FragmentHomeBinding
     private val flashSaleAdapter = FlashSaleAdapter(emptyList())
     private val latestAdapter = LatestAdapter(emptyList())
-    private val viewModel: HomeViewModel by viewModels {
+    private val viewModel: HomeViewModel by viewModels{
         HomeViewModel.Factory(
             FlashSaleRepository(NetworkService.getInstance().flashSaleApi),
-                LatestRepository(NetworkService.getInstance().latestApi)
+            LatestRepository(NetworkService.getInstance().latestApi)
         )
     }
 
@@ -56,6 +56,6 @@ class HomeFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        viewModel.updateFlashSale()
+        viewModel.updateRepository()
     }
 }
