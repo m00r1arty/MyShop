@@ -23,6 +23,7 @@ class SignInFragment : Fragment() {
 
     private lateinit var binding: FragmentSignInBinding
     private val navController by lazy { findNavController() }
+    private val viewModel: AuthViewModel by viewModels ()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,7 +31,6 @@ class SignInFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        val viewModel: AuthViewModel by viewModels ()
         binding = FragmentSignInBinding.inflate(inflater, container, false)
         (activity as MainActivity).navView.visibility = View.GONE
 

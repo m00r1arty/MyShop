@@ -4,11 +4,9 @@ import android.content.Context
 import com.radzhabov.onlineshop.data.db.AppDatabase
 import com.radzhabov.onlineshop.data.db.UserDao
 import com.radzhabov.onlineshop.data.network.service.NetworkService
-import com.radzhabov.onlineshop.presentation.viewmodels.AuthViewModel
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ViewModelComponent
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
