@@ -9,7 +9,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.radzhabov.onlineshop.R
-import com.radzhabov.onlineshop.data.model.FlashSale
+import com.radzhabov.data.model.FlashSale
 import com.squareup.picasso.Picasso
 
 class FlashSaleAdapter(

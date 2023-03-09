@@ -1,9 +1,9 @@
 package com.radzhabov.onlineshop.di
 
 import android.content.Context
-import com.radzhabov.onlineshop.data.db.AppDatabase
-import com.radzhabov.onlineshop.data.db.UserDao
-import com.radzhabov.onlineshop.data.network.service.NetworkService
+import com.radzhabov.data.db.AppDatabase
+import com.radzhabov.data.db.UserDao
+import com.radzhabov.data.network.service.NetworkService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -1,10 +1,10 @@
 package com.radzhabov.onlineshop.presentation.viewmodels
 
 import androidx.lifecycle.*
-import com.radzhabov.onlineshop.data.model.FlashSale
-import com.radzhabov.onlineshop.data.model.Latest
-import com.radzhabov.onlineshop.data.repositories.FlashSaleRepository
-import com.radzhabov.onlineshop.data.repositories.LatestRepository
+import com.radzhabov.data.model.FlashSale
+import com.radzhabov.data.model.Latest
+import com.radzhabov.data.repositories.FlashSaleRepository
+import com.radzhabov.data.repositories.LatestRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
