@@ -1,7 +1,6 @@
 package com.radzhabov.onlineshop.presentation.viewmodels
 
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import com.radzhabov.onlineshop.data.db.UserDao
 import com.radzhabov.onlineshop.data.entities.User
 import dagger.hilt.android.lifecycle.HiltViewModel
