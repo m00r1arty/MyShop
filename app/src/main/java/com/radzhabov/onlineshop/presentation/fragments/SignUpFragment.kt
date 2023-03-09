@@ -21,14 +21,13 @@ import kotlinx.coroutines.withContext
 class SignUpFragment : Fragment() {
     private lateinit var binding: FragmentSignUpBinding
     private val navController by lazy { findNavController() }
+    private val viewModel: AuthViewModel by viewModels ()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
-        val viewModel: AuthViewModel by viewModels ()
         binding = FragmentSignUpBinding.inflate(inflater, container, false)
         (activity as MainActivity).navView.visibility = View.GONE
 

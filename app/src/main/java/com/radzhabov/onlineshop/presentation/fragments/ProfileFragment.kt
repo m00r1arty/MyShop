@@ -10,7 +10,9 @@ import androidx.navigation.fragment.findNavController
 import com.radzhabov.onlineshop.R
 import com.radzhabov.onlineshop.databinding.FragmentFavoriteBinding
 import com.radzhabov.onlineshop.databinding.FragmentProfileBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ProfileFragment : Fragment() {
 
     private lateinit var binding: FragmentProfileBinding

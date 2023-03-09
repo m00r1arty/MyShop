@@ -9,7 +9,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.radzhabov.onlineshop.databinding.FragmentBasketBinding
 import com.radzhabov.onlineshop.databinding.FragmentCommentsBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class CommentsFragment : Fragment() {
 
     private lateinit var binding: FragmentCommentsBinding

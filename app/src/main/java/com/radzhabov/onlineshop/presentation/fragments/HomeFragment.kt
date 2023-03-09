@@ -14,18 +14,15 @@ import com.radzhabov.onlineshop.databinding.FragmentHomeBinding
 import com.radzhabov.onlineshop.presentation.adapter.FlashSaleAdapter
 import com.radzhabov.onlineshop.presentation.adapter.LatestAdapter
 import com.radzhabov.onlineshop.presentation.viewmodels.HomeViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class HomeFragment : Fragment() {
 
     private lateinit var _binding: FragmentHomeBinding
     private val flashSaleAdapter = FlashSaleAdapter(emptyList())
     private val latestAdapter = LatestAdapter(emptyList())
-    private val viewModel: HomeViewModel by viewModels{
-        HomeViewModel.Factory(
-            FlashSaleRepository(NetworkService.getInstance().flashSaleApi),
-            LatestRepository(NetworkService.getInstance().latestApi)
-        )
-    }
+    private val viewModel: HomeViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,

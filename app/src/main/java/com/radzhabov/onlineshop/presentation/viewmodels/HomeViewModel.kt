@@ -5,9 +5,12 @@ import com.radzhabov.onlineshop.data.model.FlashSale
 import com.radzhabov.onlineshop.data.model.Latest
 import com.radzhabov.onlineshop.data.repositories.FlashSaleRepository
 import com.radzhabov.onlineshop.data.repositories.LatestRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class HomeViewModel(
+@HiltViewModel
+class HomeViewModel @Inject constructor(
     private val flashSaleRepository: FlashSaleRepository,
     private val latestRepository: LatestRepository
 ) : ViewModel() {
@@ -28,14 +31,5 @@ class HomeViewModel(
             val latestList = latestRepository.getLatestList()
             _latest.value = latestList
         }
-    }
-
-    class Factory(
-        private val flashSaleRepository: FlashSaleRepository,
-        private val latestRepository: LatestRepository
-        ) : ViewModelProvider.NewInstanceFactory() {
-        @Suppress("UNCHECKED_CAST")
-        override fun <T : ViewModel> create(modelClass: Class<T>): T =
-            HomeViewModel(flashSaleRepository, latestRepository) as T
     }
 }

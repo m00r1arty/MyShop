@@ -10,7 +10,9 @@ import androidx.lifecycle.ViewModelProvider
 import com.radzhabov.onlineshop.databinding.FragmentBasketBinding
 import com.radzhabov.onlineshop.databinding.FragmentSignInBinding
 import com.radzhabov.onlineshop.databinding.FragmentSignUpBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class BasketFragment : Fragment() {
 
     private lateinit var binding: FragmentBasketBinding
