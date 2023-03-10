@@ -7,16 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.radzhabov.onlineshop.presentation.main.MainActivity
 import com.radzhabov.onlineshop.R
 import com.radzhabov.onlineshop.databinding.FragmentSignInBinding
 import com.radzhabov.onlineshop.presentation.viewmodels.AuthViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 @AndroidEntryPoint
 class SignInFragment : Fragment() {
@@ -30,26 +26,29 @@ class SignInFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
-        binding = FragmentSignInBinding.inflate(inflater, container, false)
         (activity as MainActivity).navView.visibility = View.GONE
 
-        binding.btnLogin.setOnClickListener {
-            val firstName = binding.etFirstName.text.toString()
-
-            lifecycleScope.launch(Dispatchers.IO) {
-                if (viewModel.login(firstName)){
-                    withContext(Dispatchers.Main){
-                        navController.navigate(R.id.action_navigation_sing_in_to_navigation_home)
-                    }
-                } else {
-                    withContext(Dispatchers.Main) {
-                        Toast.makeText(requireContext(), "Login failed", Toast.LENGTH_SHORT).show()
-                        navController.navigate(R.id.action_navigation_sing_in_to_navigation_sing_up2)
-                    }
-                }
-            }
+        binding = FragmentSignInBinding.inflate(inflater, container, false).apply {
+            viewModel = this@SignInFragment.viewModel
+            lifecycleOwner = viewLifecycleOwner
+            btnLogin.setOnClickListener { signIn() }
         }
+
+        viewModel.user.observe(viewLifecycleOwner) {}
         return binding.root
+    }
+
+    private fun signIn() {
+        viewModel.login().observe(viewLifecycleOwner) { isSigned ->
+            isSigned?.let { navigateIfSigned(it) }
+        }
+    }
+
+    private fun navigateIfSigned(isSigned: Boolean) {
+        if (isSigned) {
+            navController.navigate(R.id.action_navigation_sing_in_to_navigation_home)
+        } else {
+            Toast.makeText(requireContext(), "Login failed", Toast.LENGTH_SHORT).show()
+        }
     }
 }

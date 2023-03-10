@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.radzhabov.onlineshop.presentation.viewmodels.AuthViewModel"/>
+    </data>
+<FrameLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".presentation.fragments.SignUpFragment">
@@ -37,16 +45,18 @@
                 android:id="@+id/etFirstName"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:layout_marginLeft="44dp"
-                android:layout_marginRight="42dp"
+                android:layout_marginStart="44dp"
+                android:layout_marginEnd="42dp"
                 android:background="@drawable/edit_text_background"
                 android:fontFamily="@font/montserrat"
                 android:hint="First name"
+                android:text="@={viewModel.user.firstname}"
                 android:paddingLeft="12dp"
                 android:paddingRight="12dp"
                 android:textAlignment="center"
                 android:textColor="@color/colorETAuth"
                 android:textSize="15sp" />
+
             <EditText
                 android:id="@+id/etLastName"
                 android:layout_width="match_parent"
@@ -57,11 +67,13 @@
                 android:background="@drawable/edit_text_background"
                 android:fontFamily="@font/montserrat"
                 android:hint="Last name"
+                android:text="@={viewModel.user.lastname}"
                 android:paddingLeft="12dp"
                 android:paddingRight="12dp"
                 android:textAlignment="center"
                 android:textColor="@color/colorETAuth"
                 android:textSize="15sp" />
+
             <EditText
                 android:id="@+id/etEmail"
                 android:layout_width="match_parent"
@@ -72,6 +84,7 @@
                 android:background="@drawable/edit_text_background"
                 android:fontFamily="@font/montserrat"
                 android:hint="Email"
+                android:text="@={viewModel.user.email}"
                 android:inputType="textEmailAddress"
                 android:paddingLeft="12dp"
                 android:paddingRight="12dp"
@@ -153,5 +166,5 @@
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
-
 </FrameLayout>
+</layout>

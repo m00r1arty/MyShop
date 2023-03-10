@@ -4,9 +4,9 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.radzhabov.data.entities.User
+import com.radzhabov.data.entities.UserEntity
 
-@Database(entities = [User::class], version = 1)
+@Database(entities = [UserEntity::class], version = 1)
 abstract class AppDatabase: RoomDatabase() {
     abstract fun userDao(): UserDao
 

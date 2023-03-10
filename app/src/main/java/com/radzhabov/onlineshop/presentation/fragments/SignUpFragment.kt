@@ -6,16 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.radzhabov.onlineshop.presentation.main.MainActivity
 import com.radzhabov.onlineshop.R
 import com.radzhabov.onlineshop.databinding.FragmentSignUpBinding
 import com.radzhabov.onlineshop.presentation.viewmodels.AuthViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 @AndroidEntryPoint
 class SignUpFragment : Fragment() {
@@ -28,28 +24,25 @@ class SignUpFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentSignUpBinding.inflate(inflater, container, false)
         (activity as MainActivity).navView.visibility = View.GONE
 
-        binding.btnRegister.setOnClickListener {
-            val firstName = binding.etFirstName.text.toString()
-            val lastName = binding.etLastName.text.toString()
-            val email = binding.etEmail.text.toString()
-
-            lifecycleScope.launch(Dispatchers.IO) {
-                // Registred new user
-                viewModel.register(firstName, lastName, email)
-                withContext(Dispatchers.Main) {
-                    navController.navigate(R.id.action_navigation_sing_up_to_navigation_sing_in2)
-                }
-            }
+        binding = FragmentSignUpBinding.inflate(inflater, container, false).apply {
+            lifecycleOwner = viewLifecycleOwner
+            viewModel = this@SignUpFragment.viewModel
+            btnRegister.setOnClickListener { register() }
+            login.setOnClickListener{ backToLogin() }
         }
 
-        binding.login.setOnClickListener{
-            navController.navigate(R.id.action_navigation_sing_up_to_navigation_sing_in2)
-        }
-
+        viewModel.user.observe(viewLifecycleOwner) {}
         return binding.root
     }
 
+    private fun register() {
+        viewModel.register()
+        navController.navigate(R.id.action_navigation_sing_up_to_navigation_sing_in2)
+    }
+
+    private fun backToLogin() {
+        navController.navigate(R.id.action_navigation_sing_up_to_navigation_sing_in2)
+    }
 }

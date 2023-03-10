@@ -6,9 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import com.radzhabov.data.network.service.NetworkService
-import com.radzhabov.data.repositories.FlashSaleRepository
-import com.radzhabov.data.repositories.LatestRepository
 import com.radzhabov.onlineshop.presentation.main.MainActivity
 import com.radzhabov.onlineshop.databinding.FragmentHomeBinding
 import com.radzhabov.onlineshop.presentation.adapter.FlashSaleAdapter

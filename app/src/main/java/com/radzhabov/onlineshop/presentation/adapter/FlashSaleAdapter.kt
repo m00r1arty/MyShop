@@ -8,12 +8,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.radzhabov.data.model.Product
 import com.radzhabov.onlineshop.R
-import com.radzhabov.data.model.FlashSale
 import com.squareup.picasso.Picasso
 
 class FlashSaleAdapter(
-    private var flashSaleList: List<FlashSale>
+    private var flashSaleList: List<Product.FlashSale>
     ): RecyclerView.Adapter<FlashSaleAdapter.FlashSaleViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FlashSaleViewHolder {
@@ -29,7 +29,7 @@ class FlashSaleAdapter(
     override fun getItemCount() = flashSaleList.size
 
     @SuppressLint("NotifyDataSetChanged")
-    fun updateFlashSaleList(flashSaleList: List<FlashSale>) {
+    fun updateFlashSaleList(flashSaleList: List<Product.FlashSale>) {
         this.flashSaleList = flashSaleList
         this.notifyDataSetChanged()
     }
@@ -43,7 +43,7 @@ class FlashSaleAdapter(
         private val name: TextView = itemView.findViewById(R.id.name_brands)
         private val price: TextView = itemView.findViewById(R.id.price_view)
 
-        fun bind(flashSale: FlashSale) {
+        fun bind(flashSale: Product.FlashSale) {
             addButton.setOnClickListener {
                 Toast.makeText(it.context, "Успешно добавлен в корзину", Toast.LENGTH_SHORT)
                     .show()
@@ -52,7 +52,7 @@ class FlashSaleAdapter(
                 Toast.makeText(it.context, "Добавлено в избранное", Toast.LENGTH_SHORT)
                     .show()
             }
-            Picasso.get().load(flashSale.image_url).into(backgroundImage)
+            Picasso.get().load(flashSale.imageUrl).into(backgroundImage)
             category.text = flashSale.category
             discount.text = "${flashSale.discount}% off"
             name.text = flashSale.name

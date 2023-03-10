@@ -1,23 +1,36 @@
 package com.radzhabov.onlineshop.presentation.viewmodels
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.radzhabov.data.db.UserDao
-import com.radzhabov.data.entities.User
+import androidx.lifecycle.viewModelScope
+import com.radzhabov.data.model.User
+import com.radzhabov.data.repositories.UserRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class AuthViewModel @Inject constructor(
-    private val userDao: UserDao
-    ) : ViewModel() {
+    private val userRepository: UserRepository
+) : ViewModel() {
 
-    suspend fun login(firstName: String): Boolean {
-        val user = userDao.login(firstName)
-        return user != null
+    val user = MutableLiveData(User.defaultUser())
+
+    fun login(): LiveData<Boolean?> {
+        val resultOfSign = MutableLiveData<Boolean?>(null)
+        viewModelScope.launch {
+            user.value?.let {
+                val user = userRepository.login(it.firstname)
+                resultOfSign.postValue(user != null)
+            }
+        }
+        return resultOfSign
     }
 
-    suspend fun register(firstName: String, lastName: String, email: String) {
-        userDao.register(User(firstname = firstName, lastname = lastName, email = email))
+    fun register() {
+        viewModelScope.launch {
+            user.value?.let { userRepository.register(it) }
+        }
     }
-
 }

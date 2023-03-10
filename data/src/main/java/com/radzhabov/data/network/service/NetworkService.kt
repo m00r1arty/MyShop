@@ -1,7 +1,6 @@
 package com.radzhabov.data.network.service
 
-import com.radzhabov.data.network.api.FlashSaleApi
-import com.radzhabov.data.network.api.LatestApi
+import com.radzhabov.data.network.api.ProductApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.Call
@@ -15,11 +14,8 @@ class NetworkService private constructor() {
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
-    val flashSaleApi: FlashSaleApi
-        get() = retrofit.create(FlashSaleApi::class.java)
-
-    val latestApi: LatestApi
-        get() = retrofit.create(LatestApi::class.java)
+    val productApi: ProductApi
+        get() = retrofit.create(ProductApi::class.java)
 
     companion object {
 

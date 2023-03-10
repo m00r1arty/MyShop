@@ -27,12 +27,7 @@ object AppModule{
     @Provides
     @Singleton
     fun provideFlashSalesApi(networkService: NetworkService) =
-        networkService.flashSaleApi
-
-    @Provides
-    @Singleton
-    fun latestApi(networkService: NetworkService) =
-        networkService.latestApi
+        networkService.productApi
 
     @Provides
     fun provideUserDao(appDatabase: AppDatabase): UserDao {

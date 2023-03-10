@@ -8,12 +8,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.radzhabov.data.model.Product
 import com.radzhabov.onlineshop.R
-import com.radzhabov.data.model.Latest
 import com.squareup.picasso.Picasso
 
 class LatestAdapter(
-    private var latestList: List<Latest>
+    private var latestList: List<Product.Latest>
     ): RecyclerView.Adapter<LatestAdapter.LatestViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LatestViewHolder {
@@ -29,7 +29,7 @@ class LatestAdapter(
     override fun getItemCount() = latestList.size
 
     @SuppressLint("NotifyDataSetChanged")
-    fun updateLatestList(latestList: List<Latest>) {
+    fun updateLatestList(latestList: List<Product.Latest>) {
         this.latestList = latestList
         this.notifyDataSetChanged()
     }
@@ -41,12 +41,12 @@ class LatestAdapter(
         private val name: TextView = itemView.findViewById(R.id.name_brand)
         private val price: TextView = itemView.findViewById(R.id.price)
 
-        fun bind(latest: Latest) {
+        fun bind(latest: Product.Latest) {
             addButton.setOnClickListener {
                 Toast.makeText(it.context, "Успешно добавлен в корзину", Toast.LENGTH_SHORT)
                     .show()
             }
-            Picasso.get().load(latest.image_url).into(backgroundImage)
+            Picasso.get().load(latest.imageUrl).into(backgroundImage)
             category.text = latest.category
             name.text = latest.name
             price.text = "$ ${latest.price}"
