@@ -1,7 +1,6 @@
 package com.radzhabov.data.repositories
 
 import com.radzhabov.data.db.UserDao
-import com.radzhabov.data.entities.UserEntity
 import com.radzhabov.data.mappers.mapUser
 import com.radzhabov.data.mappers.mapUserEntity
 import com.radzhabov.data.model.User

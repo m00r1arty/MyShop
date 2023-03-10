@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.radzhabov.data.repositories.UserRepository
 import com.radzhabov.onlineshop.presentation.main.MainActivity
 import com.radzhabov.onlineshop.R
 import com.radzhabov.onlineshop.databinding.FragmentSignInBinding
@@ -26,6 +27,7 @@ class SignInFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
         (activity as MainActivity).navView.visibility = View.GONE
 
         binding = FragmentSignInBinding.inflate(inflater, container, false).apply {

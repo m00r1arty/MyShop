@@ -21,13 +21,16 @@ class ProfileFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
         binding = FragmentProfileBinding.inflate(inflater, container, false).apply {
             lifecycleOwner = viewLifecycleOwner
-            logout.setOnClickListener {
-                navController.navigate(R.id.action_navigation_profile_to_navigation_sing_in)
-            }
+
+            logout.setOnClickListener { navigateToSignIn() }
         }
 
         return binding.root
     }
+
+    private  fun navigateToSignIn() = navController.navigate(R.id.action_navigation_profile_to_navigation_sing_in)
+
 }
