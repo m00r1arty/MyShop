@@ -9,6 +9,6 @@
         android:id="@+id/textComments"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="This is comments fragment" />
+        android:text="@string/comments_fragment" />
 
 </FrameLayout>

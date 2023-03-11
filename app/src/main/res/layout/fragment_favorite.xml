@@ -9,6 +9,6 @@
         android:id="@+id/textFavorites"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="This is favorite fragment" />
+        android:text="@string/favorite_fragment" />
 
 </FrameLayout>

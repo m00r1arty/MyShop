@@ -27,7 +27,7 @@
                 <ImageView
                     android:layout_width="22dp"
                     android:layout_height="21dp"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginStart="15dp"
                     android:layout_marginTop="20dp"
                     android:src="@drawable/nav_menu_icon"/>
 
@@ -35,7 +35,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:layout_marginLeft="100dp"
+                    android:layout_marginStart="100dp"
                     android:orientation="horizontal">
                     <TextView
                         android:layout_width="wrap_content"
@@ -45,23 +45,22 @@
                         android:textSize="20sp"
                         android:textColor="@color/colorBlack"
                         android:fontFamily="@font/montserrat_bold"
-                        android:text="Trade by"/>
+                        android:text="@string/trade_by"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAlignment="center"
-
                         android:layout_gravity="center"
                         android:textSize="20sp"
-                        android:layout_marginLeft="3dp"
+                        android:layout_marginStart="3dp"
                         android:textColor="@color/colorPrimary"
                         android:fontFamily="@font/montserrat_bold"
-                        android:text="bata"/>
+                        android:text="@string/bata"/>
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="46dp"
-                    android:layout_height="43dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:layout_marginLeft="44dp"
                     android:layout_marginRight="37dp"
@@ -103,10 +102,10 @@
                 android:layout_height="48dp"
                 android:textAlignment="center"
                 android:layout_marginTop="8dp"
-                android:layout_marginLeft="57dp"
-                android:layout_marginRight="56dp"
+                android:layout_marginStart="57dp"
+                android:layout_marginEnd="56dp"
                 android:background="@drawable/edit_text_background"
-                android:hint="What are you looking for?"
+                android:hint="@string/search_product"
                 android:textColorHint="@color/colorHomeETText"
                 android:textColor="@color/colorBlack"/>
 
@@ -120,7 +119,7 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginStart="20dp"
                     android:layout_gravity="center"
                     android:orientation="vertical">
                     <RelativeLayout
@@ -144,7 +143,7 @@
                         android:textSize="8sp"
                         android:textColor="@color/colorBlack"
                         android:fontFamily="@font/montserrat"
-                        android:text="Phones"/>
+                        android:text="@string/phones"/>
                 </LinearLayout>
                 <!-- Headphones -->
                 <LinearLayout
@@ -175,13 +174,13 @@
                         android:textSize="8sp"
                         android:textColor="@color/colorBlack"
                         android:fontFamily="@font/montserrat"
-                        android:text="Headphones"/>
+                        android:text="@string/headphones"/>
                 </LinearLayout>
                 <!-- Games -->
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="20dp"
+                    android:layout_marginEnd="20dp"
                     android:layout_gravity="center"
                     android:orientation="vertical">
                     <RelativeLayout
@@ -204,13 +203,13 @@
                         android:textSize="8sp"
                         android:textColor="@color/colorBlack"
                         android:fontFamily="@font/montserrat"
-                        android:text="Games"/>
+                        android:text="@string/games"/>
                 </LinearLayout>
                 <!-- Cars -->
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="20dp"
+                    android:layout_marginEnd="20dp"
                     android:layout_gravity="center"
                     android:orientation="vertical">
                     <RelativeLayout
@@ -234,13 +233,13 @@
                         android:textSize="8sp"
                         android:textColor="@color/colorBlack"
                         android:fontFamily="@font/montserrat"
-                        android:text="Cars"/>
+                        android:text="@string/cars"/>
                 </LinearLayout>
                 <!-- Furniture -->
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="20dp"
+                    android:layout_marginEnd="20dp"
                     android:layout_gravity="center"
                     android:orientation="vertical">
                     <RelativeLayout
@@ -264,13 +263,13 @@
                         android:textSize="8sp"
                         android:textColor="@color/colorBlack"
                         android:fontFamily="@font/montserrat"
-                        android:text="Furniture"/>
+                        android:text="@string/furniture"/>
                 </LinearLayout>
                 <!-- kids -->
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="20dp"
+                    android:layout_marginEnd="20dp"
                     android:layout_gravity="center"
                     android:orientation="vertical">
                     <RelativeLayout
@@ -294,7 +293,7 @@
                         android:textSize="8sp"
                         android:textColor="@color/colorBlack"
                         android:fontFamily="@font/montserrat"
-                        android:text="kids"/>
+                        android:text="@string/kids_home"/>
                 </LinearLayout>
 
 
@@ -336,7 +335,7 @@
                     android:layout_marginStart="11dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintBottom_toTopOf="@+id/latest_recycler"
-                    android:text="Latest"/>
+                    android:text="@string/latest"/>
 
                 <TextView
                     android:id="@+id/view_latest_part_home"
@@ -348,7 +347,7 @@
                     android:layout_marginStart="11dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintBottom_toTopOf="@+id/latest_recycler"
-                    android:text="View all"/>
+                    android:text="@string/view_all"/>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/flash_sale_recycler"
@@ -372,7 +371,7 @@
                     android:layout_marginTop="17dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/latest_recycler"
-                    android:text="Flash Sale"/>
+                    android:text="@string/flash_sale"/>
 
                 <TextView
                     android:id="@+id/view_flash_sale_part_home"
@@ -384,7 +383,7 @@
                     android:layout_marginTop="20dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/latest_recycler"
-                    android:text="View all"/>
+                    android:text="@string/view_all"/>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/brands_recycler"
@@ -408,7 +407,7 @@
                     android:layout_marginTop="17dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/flash_sale_recycler"
-                    android:text="Brands"/>
+                    android:text="@string/brands"/>
 
                 <TextView
                     android:id="@+id/view_brands_part_home"
@@ -420,7 +419,7 @@
                     android:layout_marginTop="20dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/flash_sale_recycler"
-                    android:text="View all"/>
+                    android:text="@string/view_all"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
